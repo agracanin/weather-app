@@ -1,13 +1,17 @@
+import { format, parse } from 'date-fns';
 
 function formatWeather(data) {
 
     console.log(data);
 
+    const dateObj = parse(data.location.localtime, 'yyyy-MM-dd H:mm', new Date());
+    const formattedDate = format(dateObj, 'EEEE d MMMM yyyy | h:mm a');
+
     const formattedData = {
         city: data.location.name,
         country: data.location.country,
         region: data.location.region,
-        date: data.location.localtime,
+        date: formattedDate,
         img_src: data.current.condition.icon,
         condition: data.current.condition.text,
         current_temp: {
@@ -19,10 +23,21 @@ function formatWeather(data) {
             c: Math.round(data.current.feelslike_c)
         },
         wind: {
-            mph: data.current.wind_mph,
-            kph: data.current.wind_kph
+            mph: Math.round(data.current.wind_mph),
+            kph: Math.round(data.current.wind_kph)
         },
-        forecast_desc: data.forecast.forecastday[0].day.condition.text
+        forecast_desc: data.forecast.forecastday[0].day.condition.text,
+        visibility: {
+            miles: data.current.vis_miles,
+            kilometers: data.current.vis_km
+        },
+        humidity: data.current.humidity,
+        uv_index: data.current.uv,
+        cloudiness: data.current.cloud,
+        chance_of_rain: data.forecast.forecastday[0].day.daily_chance_of_rain,
+        sunrise: data.forecast.forecastday[0].astro.sunrise,
+        sunset: data.forecast.forecastday[0].astro.sunset,
+        pressure: data.current.pressure_in
     }
 
     return formattedData;

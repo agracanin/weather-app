@@ -1,8 +1,12 @@
 
-export default function renderWeather(weatherData) {
-    if (!weatherData) return;
+export default function renderPage(weatherData) {
+    renderWeather(weatherData);
+    forecastRender(weatherData);
+}
 
 
+
+function renderWeather(weatherData) {
     console.log(weatherData);
     const city = document.querySelector('.city-name');
     const country = document.querySelector('.country-name');
@@ -29,4 +33,33 @@ export default function renderWeather(weatherData) {
     weatherDesc.textContent = weatherData.condition;
     forecastDesc.textContent = weatherData.forecast_desc;
     date.textContent = weatherData.date;
+}
+
+function forecastRender(weatherData) {
+    const windSpeed = document.querySelector('.wind-label');
+    const humidity = document.querySelector('.humidity-label');
+    const uv = document.querySelector('.uv-label');
+    const visibility = document.querySelector('.visibility-label');
+    const cloudiness = document.querySelector('.cloudiness-label');
+    const rainChance = document.querySelector('.rain-chance-label');
+    const sunrise = document.querySelector('.sunrise-label');
+    const sunset = document.querySelector('.sunset-label');
+    const pressure = document.querySelector('.pressure-label');
+
+    // Units Check
+    if (weatherData.country === "United States of America") {
+        windSpeed.textContent = `${weatherData.wind.mph} mph`;
+        visibility.textContent = `${weatherData.visibility.miles} mi`;
+    } else {
+        windSpeed.textContent = `${weatherData.wind.kph} kph`;
+        visibility.textContent = `${weatherData.visibility.kilometers} km`;
+    }
+
+    humidity.textContent = `${weatherData.humidity}%`;
+    uv.textContent = weatherData.uv_index;
+    cloudiness.textContent = `${weatherData.cloudiness}%`;
+    rainChance.textContent = `${weatherData.chance_of_rain}%`;
+    sunrise.textContent = weatherData.sunrise;
+    sunset.textContent = weatherData.sunset;
+    pressure.textContent = `${weatherData.pressure} inHg`
 }
