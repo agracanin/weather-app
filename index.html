@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://kit.fontawesome.com/fe9a8c6986.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
         <h1 class="header-title">Weather</h1>
-        <form class="search-form" n>
+        <form class="search-form">
             <input class="search search-input" type="text" id="searchBtn" placeholder="Enter city">
-            <button class="search submit-button" type="submit">O</button>
+            <span class="search submit-button material-symbols-outlined">search</span>
         </form>
-        <button>placeholder</button>
+        <div class="github-container">
+        <a class="github-a" href="https://github.com/agracanin" target="_blank">
+            <i class="fa-brands fa-github fa-xl" style="color: #ffffff;"></i></a>
+        </div>
     </header>
 
     <main class="main">
@@ -41,16 +46,44 @@
                 </div>
             </div>
 
-            <div class="current-details">
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
-                <div>X</div>
+            <div class="detail-grid">
+                <div class="detail-grid-container">
+                    <p class="detail-title">Wind</p>
+                    <span class="detail-desc wind-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Humidity</p>
+                    <span class="detail-desc humidity-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">UV Index</p>
+                    <span class="detail-desc uv-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Visibility</p>
+                    <span class="detail-desc visibility-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Cloudiness</p>
+                    <span class="detail-desc cloudiness-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Chance of rain</p>
+                    <span class="detail-desc rain-chance-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Sunrise</p>
+                    <span class="detail-desc sunrise-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Sunset</p>
+                    <span class="detail-desc sunset-label"></span>
+                </div>
+                <div class="detail-grid-container">
+                    <p class="detail-title">Pressure</p>
+                    <span class="detail-desc pressure-label"></span>
+                </div>
+
             </div>
         </div>
     </main>
