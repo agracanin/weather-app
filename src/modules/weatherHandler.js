@@ -45,7 +45,7 @@ function formatWeather(data) {
 
 export default async function getWeather(city) {
 
-    const url = (`http://api.weatherapi.com/v1/forecast.json?key=b72bf483a46b47e093b185613230108&q=${city}&days=1&aqi=no&alerts=no`);
+    const url = (`https://api.weatherapi.com/v1/forecast.json?key=b72bf483a46b47e093b185613230108&q=${city}&days=1&aqi=no&alerts=no`);
 
     try {
         const response = await fetch(url, { mode: "cors" });
