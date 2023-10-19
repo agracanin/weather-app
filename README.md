@@ -1,7 +1,5 @@
 # Weather App | [Live Demo](https://agracanin.github.io/weather-app/)
 
-A weather app assignment from [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page)
-
 Demonstrated the ability to utilize an API and showcase knowledge of asynchronous Javascript
 
 ## Features
