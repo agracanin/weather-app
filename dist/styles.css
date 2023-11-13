@@ -108,12 +108,12 @@ div.container {
 
 .detail-desc {
     font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .detail-title {
     font-weight: 300;
     color: var(--primary-text-color);
-    margin-bottom: 5px;
 }
 
 .uv-label {
@@ -173,7 +173,7 @@ div.container {
     border-color: var(--secondary-text-color);
 }
 
-.search:focus + .submit-button {
+.search:focus+.submit-button {
     border-color: var(--secondary-text-color);
 }
 

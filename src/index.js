@@ -17,3 +17,8 @@ searchForm.addEventListener('submit', async (e) => {
     const weatherData = await getWeather(searchInput.value);
     renderPage(weatherData);
 });
+
+searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchForm.dispatchEvent(new Event('submit'));
+});
